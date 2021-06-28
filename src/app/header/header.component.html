@@ -1,0 +1,235 @@
+<div class="container-fluid bg">
+  <div class="row">
+      <div class="col-md-2 align-self-center">
+       <p class=" pb-2 pt-3 text-center">
+           <img class="logo" src="./../../assets/images/homescan.png">
+       </p>
+      </div>
+      <div class="col-md-10">
+          <ul class="nav pb-2 pt-1 float-right">
+              
+                <li type="button" data-toggle="modal" data-target="#myModal1"><a 
+                  class="nav-link"><i class="fa fa-sign-in" ></i>Registration</a>
+                  
+              </li>
+                <li type="button" data-toggle="modal" data-target="#myModal" id="login"><a 
+                  class="nav-link"><i class="fa fa-sign-in" ></i>Login</a>
+                  
+              </li>
+              <li type="button" id="logout"  id="dropdownMenuLink" ><a
+                class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sign-in" ></i>
+                {{this.users1.result.user_name}}</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a routerLink = "/my-profilr" class="dropdown-item">My Profile</a>
+                    <a class="dropdown-item" href="#" (click)="onLogoutClick()" >Logout</a>
+                   
+                  </div>
+            </li>
+
+            
+            </ul>
+
+
+      </div>
+
+     
+  </div>
+
+</div>
+
+<!-- Button to Open the Modal -->
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content w-75">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <div class="form-group">
+            <input 
+                formControlName="email"
+                id="email1" 
+                type="text" 
+                class="form-control field-input"
+                placeholder="Email">
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors.required">Email is required.</div>
+            </div>
+        </div>
+          <div class="form-group">
+              <input 
+                  formControlName="password"
+                  id="password1" 
+                  type="password" 
+                  class="form-control field-input"
+                  placeholder="password">
+              <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                  <div *ngIf="f.password.errors.required">Password is required.</div>
+              </div>
+          </div>
+
+          <button class="btn btn-primary" class="update text-white" type="submit" >Login</button>
+      </form>
+
+     <div class="container py-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class=" float-left">
+                    <input type="checkbox">&nbsp; <span class="remember">remmber me</span>  
+                </div>
+  
+                <div class="remember float-right">
+                 <a routerLink = 'forgot-password'><span class="remember text-primary" >Forgot password</span></a>
+                </div>
+            </div>
+        </div>
+     </div>
+          <p class="font-weight-bold text-center">Or Quick Access with</p>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <ul class="login text-center p-0">
+              <li>
+                 <a href="#"> <img src="./../../assets/images/icons8-facebook-circled-48.png"></a>
+              </li>
+              <li>
+                 <a href="#"> <img src="./../../assets/images/google.png"></a>
+              </li>
+          </ul>
+          <h3 class="text-center create"data-dismiss="modal" data-toggle="modal" data-target="#myModal1">Create a New Account</h3>
+      </div>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+ <!-- The Modal -->
+ <div class="modal" id="myModal1">
+  <div class="modal-dialog">
+    <div class="modal-content w-75">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+              <!-- <h1 class="text-center font-weight-bold service"> My Profile</h1> -->
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form [formGroup]="form" (ngSubmit)="submit()" >
+          <div class="form-group">
+              <input 
+                  formControlName="user_name"
+                  id="user_name" 
+                  type="text" 
+                  placeholder="Name"
+                  class="form-control field-input">
+              <div *ngIf="f.user_name.touched && f.user_name.invalid" class="alert alert-danger">
+                  <div *ngIf="f.user_name.errors.required">Name is required.</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <input 
+                  formControlName="mobile"
+                  id="mobile" 
+                  type="tel" 
+                  placeholder="Phone no"
+                  class="form-control field-input">
+              <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert alert-danger">
+                  <div *ngIf="f.mobile.errors.required">Phone is required.</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <input 
+                  formControlName="whatsapp_number"
+                  id="whatsapp_number" 
+                  type="tel" 
+                  placeholder="Whatsapp Number"
+                  class="form-control field-input">
+              <div *ngIf="f.whatsapp_number.touched && f.whatsapp_number.invalid" class="alert alert-danger">
+                  <div *ngIf="f.whatsapp_number.errors.required">whatsapp Number is required.</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <input 
+                  formControlName="password"
+                  id="password" 
+                  type="password" 
+                  placeholder="Password"
+                  class="form-control field-input">
+              <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                  <div *ngIf="f.password.errors.required">Password is required.</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <input 
+                  formControlName="address"
+                  id="address" 
+                  type="text" 
+                  placeholder="Address"
+                  class="form-control field-input">
+              <div *ngIf="f.address.touched && f.address.invalid" class="alert alert-danger">
+                  <div *ngIf="f.address.errors.required">Address is required.</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <input 
+                  formControlName="email"
+                  id="email" 
+                  type="text"  
+                  placeholder="Email"
+                  class="form-control field-input">
+              <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                  <div *ngIf="f.email.errors.required">Email is required.</div>
+              </div>
+          </div>
+          <!-- <div class="form-group">
+              <label for="register_id">Register ID:</label>
+              <input 
+                  formControlName="register_id"
+                  id="register_id" 
+                  type="text" 
+                  class="form-control">
+              <div *ngIf="f.register_id.touched && f.register_id.invalid" class="alert alert-danger">
+                  <div *ngIf="f.register_id.errors.required">register_id is required.</div>
+              </div>
+          </div> -->
+       
+          <button class="btn btn-primary update" type="submit" [disabled]="!form.valid">Submit</button>
+      </form>
+    
+
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

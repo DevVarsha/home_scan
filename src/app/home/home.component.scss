@@ -1,0 +1,125 @@
+
+.banner
+{
+    background-image: url('./../../assets/images/doctor-banner.jfif');
+    padding: 285px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 10rem;
+}
+a:hover {
+    text-decoration: none;
+    color: #FFF;
+}
+.service
+{
+    color:#78b6c5;
+}
+
+.gallary1, .gallary2, .gallary3, .gallary4, .gallary5, .gallary6
+{
+    object-fit: cover;
+    padding: 20px;
+}
+.valid-feedback.feedback-icon,
+.invalid-feedback.feedback-icon {
+    position: absolute;
+    width: auto;
+    bottom: 10px;
+    right: 10px;
+    margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+// .image {
+//     opacity: 1;
+//     display: block;
+//     width: 100%;
+//     height: auto;
+//     transition: .5s ease;
+//     backface-visibility: hidden;
+//   }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .gallary1:hover .middle, .image,
+  .gallary2:hover .middle, .image,
+  .gallary3:hover .middle, .image,
+  .gallary4:hover .middle, .image,
+  .gallary5:hover .middle, .image,
+  .gallary6:hover .middle, .image{
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  .text {
+    background: linear-gradient(180deg, #47595F00, #47595F00, #46474847, #46474847 0%, #cfd1d147 0%, #6f6e6e 100%) 0% 0% no-repeat padding-box;
+    color: #fff;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+  .bg-footer
+  {
+    background-image: linear-gradient(#607e8c, #78b6c5, #b3e5f1);
+    // padding: 100px;
+
+  }
+
+    .form-check-label {
+        position: relative;
+        left: 11px;
+        color: #767777;
+        font-size: 15px;
+        font-weight: normal;
+    }
+    input#radio1, input#radio2 {
+        position: relative;
+        left: -6px;
+        top: 1px;
+    }
+    // input[type='radio']:after {
+    //     width: 15px;
+    //     height: 15px;
+    //     border-radius: 15px;
+    //     top: -2px;
+    //     left: -1px;
+    //     position: relative;
+    //     background-color: #d1d3d1;
+    //     content: '';
+    //     display: inline-block;
+    //     visibility: visible;
+    //     border: 2px solid white;
+    // }
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #78b6c5;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+    }
+    .ul-footer li{
+        list-style: none;
+        display: inline;
+    }

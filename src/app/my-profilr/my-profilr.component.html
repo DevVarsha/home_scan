@@ -1,0 +1,77 @@
+
+
+
+
+<div class="container cc">
+    
+    <div class="card ">
+        <div class="cord-body">
+          
+           
+            <form [formGroup]="form" (ngSubmit)="updateNow()" >
+                <div class="form-group">
+                    <input 
+                        formControlName="user_name"
+                        id="user_name11" 
+                        type="text" 
+                        value={{this.users1.result.user_name}}
+                        placeholder="Name"
+                        class="form-control field-input">
+                    <div *ngIf="f.user_name.touched && f.user_name.invalid" class="alert alert-danger">
+                        <div *ngIf="f.user_name.errors.required">Name is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input 
+                        formControlName="mobile"
+                        id="mobile11" 
+                        type="tel" 
+                        value={{this.users1.result.user_name}}
+                        placeholder="Phone no"
+                        class="form-control field-input">
+                    <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert alert-danger">
+                        <div *ngIf="f.mobile.errors.required">Phone is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input 
+                        formControlName="whatsapp_number"
+                        id="whatsapp_number11" 
+                        type="tel" 
+                        value={{this.users1.result.user_name}}
+                        placeholder="Whatsapp Number"
+                        class="form-control field-input">
+                    <div *ngIf="f.whatsapp_number.touched && f.whatsapp_number.invalid" class="alert alert-danger">
+                        <div *ngIf="f.whatsapp_number.errors.required">whatsapp Number is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input 
+                        formControlName="address"
+                        id="address11" 
+                        type="text" 
+                        value={{this.users1.result.user_name}}
+                        placeholder="Address"
+                        class="form-control field-input">
+                    <div *ngIf="f.address.touched && f.address.invalid" class="alert alert-danger">
+                        <div *ngIf="f.address.errors.required">Address is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input 
+                        formControlName="email"
+                        id="email11" 
+                        type="text"
+                        value={{this.users1.result.user_name}}
+                        placeholder="Email"
+                        class="form-control field-input">
+                    <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                        <div *ngIf="f.email.errors.required">Email is required.</div>
+                    </div>
+                </div>
+               
+                <button class="btn btn-primary update" type="submit" [disabled]="!form.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
